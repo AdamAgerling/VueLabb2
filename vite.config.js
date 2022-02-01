@@ -34,8 +34,8 @@ export default defineConfig({
             type: 'image/png'
           }
         ],
-        name: 'Testapplikation',
-        short_name: 'Testapp',
+        name: 'AgentSelect: Valorant Agents:',
+        short_name: 'AgentSelect',
         start_url: '.',
         theme_color: 'red'
       },
