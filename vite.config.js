@@ -42,7 +42,21 @@ export default defineConfig({
       registerType: 'autoUpdate',
       workbox: {
         globPatterns: ['assets/**', 'index.html', 'manifest.webmanifest']
-      }
+      },
+      runtimeCaching: [
+        {
+          handler: 'NetworkFirst',
+          // Cache GET requests to `https://valorant-api.com/v1/agents/
+          urlPattern: '`https://valorant-api.com/v1/agents/'
+        },
+        {
+          handler: 'NetworkFirst',
+          // Regular expression to cache GET requests to
+          // “`https://valorant-api.com/v1/agents/ID” (with or without a trailing
+          // slash)
+          urlPattern: /https:\/\/valorant-api\.com\/v1\/agents\/[0-9a-f-]+\/?/
+        }
+      ]
     }),
     vue()
   ]
